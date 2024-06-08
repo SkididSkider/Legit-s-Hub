@@ -8,9 +8,16 @@ local Window = OrionLib:MakeWindow({
 
 OrionLib:MakeNotification({
     Name = "Welcome",
-    Content = "Made By Unknown_1q",
+    Content = "If you got this script you are either one of my friends or you just somehow managed to get your hands on this",
     Image = "rbxassetid://4483345998",
-    Time = 10
+    Time = 5
+})
+
+OrionLib:MakeNotification({
+    Name = "True",
+    Content = "I couldn't care less, use my 100% broken scripts",
+    Image = "rbxassetid://4483345998",
+    Time = 5
 })
 
 local Tab = Window:MakeTab({
@@ -82,28 +89,6 @@ Tab:AddSlider({
         _G.Size = Value
     end
 })
-
-Tab:AddToggle({
-	Name = "TeamCheck",
-	Default = false,
-	Callback = function(Value)
-		if _G.Toggle2 == false then
-            _G.Toggle2 = true
-            Teamcheck.TextColor3 = Color3.fromRGB(77, 255, 0)
-            Teamcheck.Text = "TeamCheck: ON"
-        else
-            _G.Toggle2 = false
-            Teamcheck.TextColor3 = Color3.fromRGB(255, 0, 0)
-            Teamcheck.Text = "TeamCheck: OFF"
-        end
-	end    
-})
-
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
 
 Tab:AddLabel("Utility")
 
