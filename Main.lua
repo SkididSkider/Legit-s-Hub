@@ -241,6 +241,38 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "No Proximity Hold Time",
+	Callback = function()
+        local function removeCooldown(prompt)
+    prompt.ActionText = "No Cooldown"  -- Optional: change the action text
+    prompt.HoldDuration = 0  -- Removes any hold duration
+    prompt.Exclusivity = Enum.ProximityPromptExclusivity.OneGlobally  -- Optional: modify exclusivity
+end
+
+-- Apply to all existing ProximityPrompts
+for _, prompt in pairs(game:GetDescendants()) do
+    if prompt:IsA("ProximityPrompt") then
+        removeCooldown(prompt)
+    end
+end
+
+-- Listen for new ProximityPrompts being added
+game.DescendantAdded:Connect(function(descendant)
+    if descendant:IsA("ProximityPrompt") then
+        removeCooldown(descendant)
+    end
+end)
+
+-- Optional: Notify the user that the script has executed
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Proximity Prompt Mod",
+    Text = "All Proximity Prompts now have no cooldown.",
+    Duration = 5
+}) 
+  	end    
+})
+
 TrollTab:AddButton({
 	Name = "NPC Controller",
 	Callback = function()
