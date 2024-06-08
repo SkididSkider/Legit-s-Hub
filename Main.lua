@@ -8,14 +8,7 @@ local Window = OrionLib:MakeWindow({
 
 OrionLib:MakeNotification({
     Name = "Welcome",
-    Content = "If you got this script you are either one of my friends or you just somehow managed to get your hands on this",
-    Image = "rbxassetid://4483345998",
-    Time = 5
-})
-
-OrionLib:MakeNotification({
-    Name = "True",
-    Content = "I couldn't care less, use my 100% broken scripts",
+    Content = "Made By Unknown_1q",
     Image = "rbxassetid://4483345998",
     Time = 5
 })
